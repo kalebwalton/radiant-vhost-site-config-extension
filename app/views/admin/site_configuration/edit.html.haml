@@ -1,0 +1,31 @@
+%h1 Site Configuration
+- form_for @site, :url => admin_site_configuration_url, :html => { :method => :put } do |f|
+  %table.fieldset{:cellpadding=>0, :cellspacing=>0, :border=>0}
+    %tr
+      %th.label
+        = label_tag :site_hostname, "Hostname"
+      %td.field{:style=>"text-align: left"}
+        = @site.hostname
+      %td.help 
+    %tr
+      %th.label
+        = label_tag :site_organization_name, "Organization Name"
+      %td.field
+        = f.text_field "organization_name", :class => 'textbox', :maxlength =>100
+      %td.help 
+    %tr
+      %th.label
+        = label_tag :site_google_maps_key, "Google Maps Key"
+      %td.field
+        = f.text_field "google_maps_key", :class => 'textbox', :maxlength => 255
+      %td.help Associated with the first hostname in hostname list
+    %tr
+      %th.label
+        = label_tag :site_google_analytics_id, "Google Analytics ID"
+      %td.field
+        = f.text_field "google_analytics_id", :class => 'textbox', :maxlength => 255
+      %td.help Associated with the first hostname in hostname list
+  %p.buttons
+    = save_model_button @site
+    or
+    = link_to 'Cancel', admin_url
