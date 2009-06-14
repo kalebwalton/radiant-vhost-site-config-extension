@@ -17,7 +17,7 @@ module VhostSiteConfigTags
   tag 'site_google_analytics' do |tag|
     raise TagError.new("Couldn't find site") if Site.current_site.nil?
     id = Site.current_site.google_analytics_id
-    return "" if id.nil?
+    return "" if id.nil? || id.empty?
 
     result = []
     result << '<script type="text/javascript">'
