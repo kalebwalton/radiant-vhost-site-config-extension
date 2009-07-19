@@ -12,7 +12,23 @@ module VhostSiteConfigTags
   end
 
   desc %{
-    Renders the organization name of the current site.
+    Renders the description of the current site.
+  }
+  tag 'site_description' do |tag|
+    raise TagError.new("Couldn't find site") if Site.current_site.nil?
+    Site.current_site.description
+  end
+
+  desc %{
+    Renders the keywords of the current site.
+  }
+  tag 'site_keywords' do |tag|
+    raise TagError.new("Couldn't find site") if Site.current_site.nil?
+    Site.current_site.keywords
+  end
+
+  desc %{
+    Renders the google analytics code for the current site.
   }
   tag 'site_google_analytics' do |tag|
     raise TagError.new("Couldn't find site") if Site.current_site.nil?

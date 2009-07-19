@@ -15,6 +15,18 @@
       %td.help 
     %tr
       %th.label
+        = label_tag :site_description, "Description"
+      %td.field
+        = f.text_field "description", :class => 'textbox', :maxlength =>255
+      %td.help General description of site. Used by some search engines. 
+    %tr
+      %th.label
+        = label_tag :site_keywords, "Keywords"
+      %td.field
+        = f.text_field "keywords", :class => 'textbox', :maxlength =>255
+      %td.help Space separated keywords. Used by some search engines.
+    %tr
+      %th.label
         = label_tag :site_google_maps_key, "Google Maps Key"
       %td.field
         = f.text_field "google_maps_key", :class => 'textbox', :maxlength => 255
