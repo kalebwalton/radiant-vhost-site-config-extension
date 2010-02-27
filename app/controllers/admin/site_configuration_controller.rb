@@ -46,7 +46,7 @@ class Admin::SiteConfigurationController < ApplicationController
 
   def valid_params?
     hash = (params[:site] || {}).symbolize_keys
-    (hash.keys - [:organization_name, :google_maps_key, :google_analytics_id, :description, :keywords]).size == 0
+    (hash.keys - [:organization_name, :google_maps_key, :google_analytics_id, :twitter_username, :twitter_password, :description, :keywords]).size == 0
   end
 
   def announce_bad_data

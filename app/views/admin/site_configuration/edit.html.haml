@@ -37,6 +37,18 @@
       %td.field
         = f.text_field "google_analytics_id", :class => 'textbox', :maxlength => 255
       %td.help Associated with the first hostname in hostname list
+    %tr
+      %th.label
+        = label_tag :site_twitter_username, "Twitter Username"
+      %td.field
+        = f.text_field "twitter_username", :class => 'textbox', :maxlength => 255
+      %td.help Automatically send tweets when you create or update pages
+    %tr
+      %th.label
+        = label_tag :site_twitter_username, "Twitter Password"
+      %td.field
+        = f.password_field "twitter_password", :class => 'textbox', :maxlength => 255
+      %td.help
   %p.buttons
     = save_model_button @site
     or
